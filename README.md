@@ -61,9 +61,18 @@ If you already have your own setup in place, you are of course free to use it.
 
 ## Docker
 
-### Setup
 An alternative to installing all packages on your machine you can run it in a container.
 
+### Setup
+
+Copy config files
+
+```
+cp .env.example .env
+cp config/database.config.php.dist config/database.config.php
+```
+
+### Run
 Run the php server and the mysql db:
 
 ```
