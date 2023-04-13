@@ -59,8 +59,9 @@ If you already have your own setup in place, you are of course free to use it.
  
  - Open the `Challenge` class (located in `src/Challenge.php`) and write some method bodies that fulfill the requirements given in the comments
 
-## Docker setup
+## Docker
 
+### Setup
 An alternative to installing all packages on your machine you can run it in a container.
 
 Run the php server and the mysql db:
@@ -75,6 +76,12 @@ Optionally also run phpmyadmin:
 docker-compose --profile full up -d
 ```
 
+### Run tests in Docker
+
+```
+docker exec -it otto-demo composer run-script test
+```
+
 ### Remove Docker
 
 To remove the container and images run this command:
@@ -82,4 +89,3 @@ To remove the container and images run this command:
 ```
 docker kill otto-admin otto-db otto-demo && docker rm  otto-admin otto-db otto-demo && docker rmi otto-demo-img:latest
 ```
-
