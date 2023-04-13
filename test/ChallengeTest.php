@@ -15,7 +15,7 @@ class ChallengeTest extends TestCase
     protected $instance;
     protected $fixture;
 
-    public function setUp()
+    public function setUp(): void
     {
         $config = require_once __DIR__ . '/../config/database.config.php';
 
