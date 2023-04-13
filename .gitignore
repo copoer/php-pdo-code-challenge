@@ -1,3 +1,4 @@
 vendor/
 config/database.config.php
 .idea/
+.phpunit.result.cache
