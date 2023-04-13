@@ -30,6 +30,7 @@ If you don't have these things set up here's a few resources to help;
 
 Refer to your distribution's documentation for PHP, MySQL & Composer
 
+
 ---
 
 If you already have your own setup in place, you are of course free to use it.
@@ -57,3 +58,43 @@ If you already have your own setup in place, you are of course free to use it.
  - Navigate to [localhost:8080](http://localhost:8080) and you should see a blank table with a few table headings
  
  - Open the `Challenge` class (located in `src/Challenge.php`) and write some method bodies that fulfill the requirements given in the comments
+
+## Docker
+
+An alternative to installing all packages on your machine you can run it in a container.
+
+### Setup
+
+Copy config files
+
+```
+cp .env.example .env
+cp config/database.config.php.dist config/database.config.php
+```
+
+### Run
+Run the php server and the mysql db:
+
+```
+docker-compose up -d
+```
+
+Optionally also run phpmyadmin:
+
+```
+docker-compose --profile full up -d
+```
+
+### Run tests in Docker
+
+```
+docker exec -it otto-demo composer run-script test
+```
+
+### Remove Docker
+
+To remove the container and images run this command:
+
+```
+docker kill otto-admin otto-db otto-demo && docker rm  otto-admin otto-db otto-demo && docker rmi otto-demo-img:latest
+```
