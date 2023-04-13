@@ -1,10 +1,8 @@
 <?php
 
-$env = parse_ini_file('.env');
-
 return [
-    'host' => $env['HOST'],
-    'user' => $env['DB_USERNAME'],
-    'password' => $env['DB_PASSWORD'],
-    'database' => $env['DB_DATABASE']
+    'host' => 'localhost',
+    'user' => 'your-database-username',
+    'password' => 'your-database-password',
+    'database' => 'otto-code-challenge'
 ];
